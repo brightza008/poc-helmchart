@@ -7,7 +7,7 @@ on:
 
 jobs:
   run-helm:
-    runs-on: mymac
+    runs-on: my-mac
 
     steps:
       - name: Checkout repository
