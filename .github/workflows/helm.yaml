@@ -1,0 +1,17 @@
+name: My Workflow
+
+on:
+  push:
+    branches:
+      - minikube
+
+jobs:
+  build:
+    runs-on: mymac
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Another Step
+        run: echo "This is another step"
