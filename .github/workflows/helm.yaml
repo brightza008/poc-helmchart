@@ -6,7 +6,7 @@ on:
       - minikube
 
 jobs:
-  build:
+  test helm:
     runs-on: mymac
 
     steps:
