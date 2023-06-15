@@ -7,3 +7,16 @@ resources:
    requests:
      cpu: 100m
      memory: 128Mi
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: addon-http-application-routing
+  # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: app1.7b2a50f38e934475bfff.southeastasia.aksapp.io
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []

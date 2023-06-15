@@ -2,8 +2,8 @@
 for poc-helmchart on  minikube
 
 ```
-helm install my-cherry-chart buildchart/ --values buildchart/values-global.yaml
-
+helm install my-cherry-chart buildchart/ --values buildchart/values-global.yaml --values buildchart/values-dev.yaml
+helm uninstall my-cherry-chart
 
 ```
 ```
