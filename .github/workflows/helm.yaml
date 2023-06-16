@@ -18,5 +18,5 @@ jobs:
         
       - name: Helm Deployment
         run: |
-          kubectl config get-context
+          kubectl config get-contexts
           # helm upgrade --install my-cherry-chart buildchart/
