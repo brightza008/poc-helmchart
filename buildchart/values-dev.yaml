@@ -1,3 +1,6 @@
+image:
+  repository: docker
+
 replicaCount: 2
 
 resources:

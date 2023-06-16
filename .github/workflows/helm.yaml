@@ -15,3 +15,8 @@ jobs:
 
       - name: Another Step
         run: echo "This is another step"
+        
+      - name: Helm Deployment
+        run: |
+          kubectl config get-context
+          # helm upgrade --install my-cherry-chart buildchart/
