@@ -1,6 +1,9 @@
 applicationName: poc-github-action
 replicaCount: 2
 
+imagePullSecrets:
+  - name: registry-pull-secret
+  
 image:
   repository: docker
 
