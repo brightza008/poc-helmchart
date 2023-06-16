@@ -5,6 +5,9 @@ on:
     branches:
       - minikube
 
+env:
+  PackageVersion: 1.0.0
+  
 jobs:
   run-helm:
     runs-on: my-mac
@@ -20,4 +23,6 @@ jobs:
         run: |
           kubectl config get-contexts
           helm upgrade --install my-cherry-chart buildchart/ \
-          --values buildchart/values-global.yaml 
+          --set image.tag=${{env.PackageVersion}}
+          --values buildchart/values-global.yaml \
+          --values buildchart/values-local.yaml 

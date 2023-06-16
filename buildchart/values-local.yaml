@@ -1,0 +1,26 @@
+applicationName: poc-github-action
+replicaCount: 2
+
+image:
+  repository: docker
+
+resources:
+   limits:
+     cpu: 100m
+     memory: 128Mi
+   requests:
+     cpu: 100m
+     memory: 128Mi
+
+# ingress:
+#   enabled: true
+#   annotations:
+#     kubernetes.io/ingress.class: addon-http-application-routing
+#   # kubernetes.io/ingress.class: nginx
+#     # kubernetes.io/tls-acme: "true"
+#   hosts:
+#     - host: app1.7ef5d39bf6304a658eff.southeastasia.aksapp.io
+#       paths:
+#         - path: /
+#           pathType: ImplementationSpecific
+#   tls: []
