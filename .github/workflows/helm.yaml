@@ -26,6 +26,6 @@ jobs:
           kubectl config get-contexts
           helm upgrade --install my-cherry-chart buildchart/ \
           --set image.tag=${{env.PackageVersion}} \
-          --set image.repository=${{env.docker_repo}}
+          --set image.repository=${{env.docker_repo}} \
           --values buildchart/values-global.yaml \
           --values buildchart/values-local.yaml 
