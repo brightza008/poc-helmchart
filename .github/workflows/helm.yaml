@@ -17,14 +17,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Another Step
-        run: |
-         docker login -u ${{ env.docker_repo }} -p ${{ secrets.MY_DOCKER_PASSWORD }}
+      # - name: Another Step
+      #   run: |
+      #    docker login -u ${{ env.docker_repo }} -p ${{ secrets.MY_DOCKER_PASSWORD }}
         
       - name: Helm Deployment
         run: |
           kubectl config get-contexts
           helm upgrade --install my-cherry-chart buildchart/ \
           --set image.tag=${{env.PackageVersion}} \
+          --set image.repository=${{env.docker_repo}}
           --values buildchart/values-global.yaml \
           --values buildchart/values-local.yaml 

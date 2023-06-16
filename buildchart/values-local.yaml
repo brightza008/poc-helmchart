@@ -4,8 +4,8 @@ replicaCount: 2
 imagePullSecrets:
 - name: myregistrykey
 
-image:
-  repository: docker
+# image:
+#   repository: docker
 
 resources:
    limits:
