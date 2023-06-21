@@ -1,0 +1,39 @@
+name: Helm build
+
+on:
+  push:
+    branches:
+      - minikube
+    paths:
+      - .github/workflows/helm-build.yaml
+
+env:
+  PackageVersion: 1.0.0
+  docker_repo: pongu
+
+jobs:
+  run-helm:
+    runs-on: my-mac
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Azure login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      
+      - name: helm build chart
+        run: | 
+          #### HELM ####
+          helm dependency update buildchart
+          helm package ./buildchart
+
+          az storage blob upload \
+          --name buildchart-0.1.0.tgz \
+          --file "./buildchart-0.1.0.tgz" \
+          --container-name charts \
+          --account-name muzikzzacc \
+          --auth-mode login
+
