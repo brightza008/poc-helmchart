@@ -31,7 +31,6 @@ jobs:
           helm package ./buildchart
 
           az storage blob upload \
-          --name buildchart-0.1.0.tgz \
           --file "./buildchart-0.1.0.tgz" \
           --container-name charts \
           --account-name muzikzzacc \

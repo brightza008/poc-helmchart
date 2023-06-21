@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - minikube
+    paths:
+      - .github/workflows/helm.yaml
 
 env:
   PackageVersion: 1.0.0
