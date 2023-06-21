@@ -13,7 +13,7 @@ env:
 
 jobs:
   run-helm:
-    runs-on: my-mac
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
