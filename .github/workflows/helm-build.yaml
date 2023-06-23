@@ -27,15 +27,18 @@ jobs:
       - name: helm build chart
         run: | 
           #### HELM ####
+          mkdir azure-helm-repository
+          
           helm repo add common https://charts.helm.sh/incubator
           helm dependency update buildchart
           helm package ./buildchart
-          helm repo index .
+          
+          cp ./buildchart-0.1.0.tgz ./azure-helm-repository/
+          helm repo index ./azure-helm-repository
 
-          az storage blob upload-batch \
+          az storage blob upload-batch --overwrite --account-name muzikzzacc \
           --destination charts \
-          --source ./ \
-          --pattern "buildchart-0.1.0.tgz" "index.yaml"
+          --source ./azure-helm-repository
 
           # az storage blob upload \
           # --file "./buildchart-0.1.0.tgz" \
