@@ -1,5 +1,7 @@
+# image:
+#   repository: docker
 image:
-  repository: docker
+  repository: bbbacr.azurecr.io
 
 replicaCount: 2
 
