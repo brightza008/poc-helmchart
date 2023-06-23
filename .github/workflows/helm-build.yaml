@@ -30,6 +30,7 @@ jobs:
           helm repo add common https://charts.helm.sh/incubator
           helm dependency update buildchart
           helm package ./buildchart
+          helm repo index .
 
           az storage blob upload \
           --file "./buildchart-0.1.0.tgz" \
