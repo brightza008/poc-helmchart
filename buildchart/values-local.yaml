@@ -2,6 +2,9 @@ applicationName: poc-github-action
 replicaCount: 2
 applicationPort: 1234
 
+image:
+  repository: bbbacr.azurecr.io
+
 imagePullSecrets:
 - name: myregistrykey
 

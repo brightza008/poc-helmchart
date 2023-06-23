@@ -5,7 +5,7 @@ on:
     branches:
       - minikube
     paths:
-      - .github/workflows/helm.yaml
+      - .github/workflows/helm-deploy.yaml
 
 env:
   PackageVersion: 1.0.0
