@@ -27,6 +27,7 @@ jobs:
       - name: helm build chart
         run: | 
           #### HELM ####
+          helm repo add common https://charts.helm.sh/incubator
           helm dependency update buildchart
           helm package ./buildchart
 
