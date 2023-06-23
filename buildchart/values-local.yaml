@@ -6,7 +6,8 @@ image:
   repository: bbbacr.azurecr.io
 
 imagePullSecrets:
-- name: myregistrykey
+# - name: myregistrykey #dockerhub
+- name: acr-registry # ACR bbbacr.azurecr.io
 
 # image:
 #   repository: docker
