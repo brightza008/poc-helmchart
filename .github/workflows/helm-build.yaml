@@ -34,6 +34,7 @@ jobs:
 
           az storage blob upload \
           --file "./buildchart-0.1.0.tgz" \
+          --file ".index.yaml" \
           --container-name charts \
           --account-name muzikzzacc \
           --auth-mode login
