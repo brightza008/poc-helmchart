@@ -32,10 +32,15 @@ jobs:
           helm package ./buildchart
           helm repo index .
 
-          az storage blob upload \
-          --file "./buildchart-0.1.0.tgz" \
-          --file "./index.yaml" \
-          --container-name charts \
-          --account-name muzikzzacc \
-          --auth-mode login
+          az storage blob upload-batch \
+          --destination charts \
+          --source ./ \
+          --pattern "buildchart-0.1.0.tgz" "index.yaml"
+
+          # az storage blob upload \
+          # --file "./buildchart-0.1.0.tgz" \
+          # --file "./index.yaml" \
+          # --container-name charts \
+          # --account-name muzikzzacc \
+          # --auth-mode login
 
