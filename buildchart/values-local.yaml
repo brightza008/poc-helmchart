@@ -30,5 +30,5 @@ ingress:
     - host: hello-test.internal 
       paths:
         - path: /hi
-          pathType: ImplementationSpecific
+          # pathType: ImplementationSpecific
   tls: []
