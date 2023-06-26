@@ -2,6 +2,9 @@
 for poc-helmchart on  minikube
 
 ```
+helm dependency update buildchart
+helm package --app-version ${args.packageVersion} ./buildchart
+
 helm upgrade --install my-cherry-chart buildchart/ \
 --values buildchart/values-global.yaml \
 --values buildchart/values-dev.yaml
