@@ -27,7 +27,7 @@ ingress:
     kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: hello-test.internal 
+    - host: hello-test.local
       paths:
         - path: /hi
           # pathType: ImplementationSpecific
