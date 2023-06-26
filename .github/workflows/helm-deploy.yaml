@@ -31,4 +31,3 @@ jobs:
           --set image.repository=${{env.docker_repo}} \
           --values buildchart/values-global.yaml \
           --values buildchart/values-local.yaml 
-  
