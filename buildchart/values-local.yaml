@@ -31,4 +31,6 @@ ingress:
       paths:
         - path: /hi
           # pathType: ImplementationSpecific
+          pathType: Prefix
+
   tls: []
