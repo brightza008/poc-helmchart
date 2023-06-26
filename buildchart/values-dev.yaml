@@ -1,5 +1,4 @@
-# image:
-#   repository: docker
+applicationPort: 1234
 image:
   repository: bbbacr.azurecr.io
 
