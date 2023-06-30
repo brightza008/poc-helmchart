@@ -1,4 +1,3 @@
-applicationName: poc-github-action
 applicationPort: 1234
 image:
   repository: bbbacr.azurecr.io
