@@ -20,7 +20,7 @@ ingress:
   # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: app1.0b6a9dfe23ea4040aa8b.southeastasia.aksapp.io
+    - host: app1.2c45fa93a1e94e98aa69.southeastasia.aksapp.io
       paths:
         - path: /
           pathType: ImplementationSpecific
