@@ -1,0 +1,27 @@
+applicationPort: 1234
+image:
+  repository: bbbacr.azurecr.io
+  pullPolicy: Always
+
+replicaCount: 2
+
+resources:
+   limits:
+     cpu: 100m
+     memory: 128Mi
+   requests:
+     cpu: 100m
+     memory: 128Mi
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: addon-http-application-routing
+  # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: app1.2c45fa93a1e94e98aa69.southeastasia.aksapp.io
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
